@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+{% block head%} 
+    <title>Ubike 2.0 列表</title>
+{% endblock%}
+{% block body%} 
+<table class="table">
+    <thead>
+      <tr>
+        {% for key,value in data_name_dict %}
+            <th scope="col">{{ value }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+        {% for station in data %}
+            <tr>
+                <!-- <th scope="row">1</th> -->
+                {% for key,value in data_name_dict %}
+                    <td>{{ station[key] }}</td>
+                {% endfor %}
+                <!-- <td>{{ station['ar'] }}</td>
+                <td>{{ station['sarea'] }}</td>
+                <td>{{ station.sbi }}</td>
+                <td>{{ station.tot - station.sbi }}</td> -->
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock%}

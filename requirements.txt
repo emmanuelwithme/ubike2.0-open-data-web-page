@@ -1,0 +1,5 @@
+Flask
+gunicorn
+urllib
+json
+encodings
